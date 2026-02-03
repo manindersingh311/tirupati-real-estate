@@ -47,7 +47,7 @@ export function Hero() {
             onClick={scrollToContact}
             className="px-8 py-4 bg-gradient-to-r from-primary to-yellow-500 hover:from-yellow-400 hover:to-primary text-slate-900 font-bold rounded-full text-lg transition-all transform hover:scale-105 shadow-lg shadow-primary/30 min-w-[200px]"
           >
-            <a href="tel:+91 98881-19100">Book Free Site Visit</a>
+            <a href="tel:+91 9996126426">Book Free Site Visit</a>
           </button>
         </motion.div>
       </div>
