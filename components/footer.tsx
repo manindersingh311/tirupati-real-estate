@@ -11,7 +11,7 @@ export function Footer() {
   return (
     <footer className="relative z-10 bg-white/90 text-slate-900 pt-10 pb-8 border-t rounded-2xl border-slate-200 mx-4 lg:mx-12 mt-12">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-1">
             <div
