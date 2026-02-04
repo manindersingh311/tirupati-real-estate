@@ -8,63 +8,6 @@ import { PiFarm } from "react-icons/pi";
 import { RiHomeSmileLine } from "react-icons/ri";
 import { TbHomeDollar } from "react-icons/tb";
 
-// const services = [
-//   {
-//     id: 1,
-//     title: "Villas & Residences",
-//     description:
-//       "Bespoke luxury villas designed for comfort, style, and modern living.",
-//     icon: <LuHouse className="text-primary w-10 h-10" />,
-//   },
-//   {
-//     id: 2,
-//     title: "Commercial Projects",
-//     description: "High-end commercial spaces, offices, and shopping complexes.",
-//     icon: <FaRegBuilding className="text-primary w-10 h-10" />,
-//   },
-//   {
-//     id: 3,
-//     title: "2BHK & 3BHK Homes",
-//     description:
-//       "Premium apartments focusing on space optimization and luxury amenities.",
-//     icon: <PiBuildingApartment className="text-primary w-10 h-10" />,
-//   },
-//   {
-//     id: 4,
-//     title: "Architectural Design",
-//     description:
-//       "World-class architectural planning and interior design services.",
-//     icon: <MdArchitecture className="text-primary w-10 h-10" />,
-//   },
-//   {
-//     id: 5,
-//     title: "Property Buying Assistance",
-//     description:
-//       "Expert guidance to help you find and buy the right residential or commercial property.",
-//     icon: <RiHomeSmileLine className="text-primary w-10 h-10" />,
-//   },
-//   {
-//     id: 6,
-//     title: "Property Selling Services",
-//     description:
-//       "Strategic marketing and negotiation support to sell your property at the best value.",
-//     icon: <TbHomeDollar className="text-primary w-10 h-10" />,
-//   },
-//   {
-//     id: 7,
-//     title: "Rental & Leasing",
-//     description:
-//       "End-to-end rental solutions for residential and commercial leasing needs.",
-//     icon: <BsKey className="text-primary w-10 h-10" />,
-//   },
-//   {
-//     id: 8,
-//     title: "Legal & Documentation Support",
-//     description:
-//       "Complete assistance with property documentation, registration, and legal verification.",
-//     icon: <HiOutlineDocumentText className="text-primary w-10 h-10" />,
-//   },
-// ];
 const services = [
   {
     id: 1,
@@ -124,7 +67,7 @@ export function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 mx-4 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, id) => (
             <motion.div
               key={id}

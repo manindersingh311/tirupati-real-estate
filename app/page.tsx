@@ -36,7 +36,7 @@ export default function Home() {
         {/* Sections with glass spacing */}
         <div className="flex flex-col">
           <Services />
-          <About />
+          {/* <About /> */}
           <OurProjects />
           <Testimonials />
         </div>

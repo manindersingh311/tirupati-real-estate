@@ -16,7 +16,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-start justify-center px-6 relative pt-28 ml-12 mt-6 mr-12 overflow-visible"
+      className="min-h-screen flex items-start justify-center px-6 relative pt-28 ml-4 lg:ml-12 mt-6 mr-4 lg:mr-12 overflow-visible"
       style={{
         backgroundImage: "url('/househero.png')",
         backgroundSize: "100% 100%",

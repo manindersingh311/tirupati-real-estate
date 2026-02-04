@@ -29,7 +29,7 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="relative z-10 py-10 md:py-10">
+    <section id="testimonials" className="relative z-10 py-10 md:py-10 mx-4 lg:mx-12">
       <div className="max-w-7xl mx-auto px-6 py-16 bg-white/90 rounded-2xl ">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-serif font-bold text-slate-900 mb-4 text-shadow-lg">Client Stories</h2>

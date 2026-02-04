@@ -26,10 +26,10 @@ export function QuerySection() {
   };
 
   return (
-    <section className="relative z-20 bg-white ml-12 mr-12">
+    <section className="relative z-20 bg-white mx-4 lg:mx-12">
       {/* Cloud/Mist Effect Overlay - Blends Hero into this section */}
       <div className="max-w-7xl mx-auto px-6 py-12 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-end">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-end">
           {/* Left Column: Information */}
           <div className="col-span-1 space-y-6 self-center">
             <motion.div

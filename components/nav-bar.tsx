@@ -28,8 +28,8 @@ export function Navbar() {
     <nav
       className={`fixed z-50 transition-all duration-800 ease-in-out ${
         isScrolled
-          ? "top-0 left-12 right-12 glass-effect py-4"
-          : "top-5 left-12 right-12 bg-transparent py-6"
+          ? "top-0 left-4 right-4 md:left-4 md:right-4 lg:left-12 lg:right-12 glass-effect py-4"
+          : "top-5 left-4 right-4 md:left-4 md:right-4 lg:left-12 lg:right-12 bg-transparent py-6"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6">
