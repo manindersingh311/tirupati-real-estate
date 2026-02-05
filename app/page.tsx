@@ -1,6 +1,5 @@
 'use client';
 
-import { About } from "@/components/about-section";
 import { Footer } from "@/components/footer";
 import { Hero } from "@/components/hero-section";
 import { Navbar } from "@/components/nav-bar";

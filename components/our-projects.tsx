@@ -68,7 +68,7 @@ export function OurProjects() {
           <h3 className="text-3xl md:text-5xl font-serif font-bold text-foreground mb-8 text-shadow">
             Places We, <span className="text-primary italic">Deal In</span>
           </h3>
-          <p className="text-foreground/80 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
+          <p className="text-foreground/80 text-lg md:text-xl leading-relaxed mb-10 max-w-6xl mx-auto">
             15+ years of excellence in premium real estate across Punjab,
             Chandigarh, Bikaner, Haryana, Gurugram, Noida, Mohali and Delhi NCR. We offer luxury
             residences and commercial spaces crafted with modern design and

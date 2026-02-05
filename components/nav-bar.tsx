@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { CiLocationOn } from "react-icons/ci";
+import { FiPhoneCall } from "react-icons/fi";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -69,14 +70,22 @@ export function Navbar() {
           </div>
 
           {/* Desktop Actions */}
-          <div className="hidden md:flex flex-col items-center space-y-4">
+          <div className="hidden md:flex md:flex-col lg:flex-row items-start lg:items-center gap-3">
             <a
-              href="tel:+91 9996126426"
-              className="text-slate-600 hover:text-slate-900 text-lg font-bold"
+              href="tel:+919996126426"
+              className="flex items-center gap-2 text-slate-600 hover:text-slate-900 text-lg font-bold whitespace-nowrap"
             >
-              +91 99961-26426
+              <FiPhoneCall className="text-xl" />
+              91 99961-26426
             </a>
 
+            <a
+              href="tel:+919871044320"
+              className="flex items-center gap-2 text-slate-600 hover:text-slate-900 text-lg font-bold whitespace-nowrap"
+            >
+              <FiPhoneCall className="text-xl" />
+              91 98710-44320
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -107,10 +116,10 @@ export function Navbar() {
               : "max-h-0 opacity-0"
           }`}
         >
-          <div className="glass-card rounded-2xl p-6 flex flex-col space-y-4">
+          <div className="glass-card rounded-2xl p-6 flex flex-col items-center text-center space-y-4">
             {/* Mobile Location */}
-            <div className="flex items-start gap-2 pb-4 border-b border-gray-200">
-              <CiLocationOn className="text-3xl text-primary flex-shrink-0 mt-1" />
+            <div className="flex flex-col items-center gap-2 pb-4 border-b border-gray-200 w-full">
+              <CiLocationOn className="text-3xl text-primary" />
               <div className="text-sm text-gray-700 leading-relaxed">
                 EF-40, Ground Floor, <br />
                 TDI Espinia Heights, <br />
@@ -121,9 +130,17 @@ export function Navbar() {
             {/* Mobile Phone */}
             <a
               href="tel:+91 9996126426"
-              className="text-slate-600 hover:text-slate-900 text-lg font-bold text-center py-2"
+              className="flex items-center gap-2 text-slate-600 hover:text-slate-900 text-lg font-bold whitespace-nowrap"
             >
-              +91 99961-26426
+              <FiPhoneCall className="text-2xl" />
+              91 99961-26426
+            </a>
+            <a
+              href="tel:+919871044320"
+              className="flex items-center gap-2 text-slate-600 hover:text-slate-900 text-lg font-bold whitespace-nowrap"
+            >
+              <FiPhoneCall className="text-2xl" />
+              91 98710-44320
             </a>
 
             {/* Book Site Visit Button */}

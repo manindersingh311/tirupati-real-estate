@@ -1,5 +1,9 @@
 "use client";
 
+import { CiLocationOn } from "react-icons/ci";
+import { FiPhoneCall } from "react-icons/fi";
+import { MdOutlineMail } from "react-icons/md";
+
 export function Footer() {
   function scrollToSection(sectionId: string): void {
     const element = document.getElementById(sectionId);
@@ -160,24 +164,40 @@ export function Footer() {
               Contact Us
             </h3>
             <ul className="space-y-4">
-              <li className="flex items-start">
+              {/* Email */}
+              <li className="flex items-start gap-3">
+                <MdOutlineMail className="text-2xl text-slate-600 mt-0.5" />
                 <a
                   href="mailto:tirupatibuilders7@gmail.com"
-                  className="text-slate-600 hover:text-slate-900 text-sm sm:text-[10px] md:text-[12px] lg:text-sm"
+                  className="text-slate-600 hover:text-slate-900 text-sm leading-relaxed break-all"
                 >
                   tirupatibuilders7@gmail.com
                 </a>
               </li>
-              <li className="flex items-start">
-                <a
-                  href="tel:+91 9996126426"
-                  className="text-slate-600 hover:text-slate-900 text-sm"
-                >
-                  +91 9996126426
-                </a>
+
+              {/* Phone */}
+              <li className="flex items-center gap-3">
+                <FiPhoneCall className="text-2xl text-slate-600 mt-0.5" />
+                <div className="flex flex-col gap-1">
+                  <a
+                    href="tel:+919996126426"
+                    className="text-slate-600 hover:text-slate-900 text-sm whitespace-nowrap"
+                  >
+                    +91 99961-26426
+                  </a>
+                  <a
+                    href="tel:+919871044320"
+                    className="text-slate-600 hover:text-slate-900 text-sm whitespace-nowrap"
+                  >
+                    +91 98710-44320
+                  </a>
+                </div>
               </li>
-              <li className="flex items-start">
-                <span className="text-slate-600 text-sm">
+
+              {/* Address */}
+              <li className="flex items-start gap-3">
+                <CiLocationOn className="text-3xl text-slate-600 mt-1" />
+                <span className="text-slate-600 text-sm leading-relaxed">
                   EF-40, Ground Floor, <br />
                   TDI Espinia Heights, <br />
                   Sec-19, Sonipat-131001

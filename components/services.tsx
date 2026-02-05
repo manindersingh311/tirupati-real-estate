@@ -85,7 +85,7 @@ export function Services() {
               <div
                 className="relative glass-card p-8 rounded-2xl border border-white/20 backdrop-blur-xl
         hover:border-primary/50 transition-all duration-500
-        group-hover:-translate-y-2 group-hover:shadow-[0_20px_60px_-15px_rgba(99,102,241,0.4)]"
+        group-hover:shadow-[0_20px_60px_-15px_rgba(99,102,241,0.4)]"
               >
                 {/* Icon */}
                 <div
@@ -127,4 +127,3 @@ export function Services() {
     </section>
   );
 }
-
