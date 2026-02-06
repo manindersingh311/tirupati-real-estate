@@ -73,17 +73,17 @@ export function Navbar() {
           <div className="hidden md:flex md:flex-col lg:flex-row items-start lg:items-center gap-3">
             <a
               href="tel:+919996126426"
-              className="flex items-center gap-2 text-slate-600 hover:text-slate-900 text-lg font-bold whitespace-nowrap"
+              className="flex items-center gap-2 text-slate-600 hover:text-slate-900 text-md font-bold whitespace-nowrap"
             >
-              <FiPhoneCall className="text-xl" />
+              <FiPhoneCall className="text-lg" />
               91 99961-26426
             </a>
 
             <a
               href="tel:+919871044320"
-              className="flex items-center gap-2 text-slate-600 hover:text-slate-900 text-lg font-bold whitespace-nowrap"
+              className="flex items-center gap-2 text-slate-600 hover:text-slate-900 text-md font-bold whitespace-nowrap"
             >
-              <FiPhoneCall className="text-xl" />
+              <FiPhoneCall className="text-lg" />
               91 98710-44320
             </a>
           </div>
@@ -130,16 +130,16 @@ export function Navbar() {
             {/* Mobile Phone */}
             <a
               href="tel:+91 9996126426"
-              className="flex items-center gap-2 text-slate-600 hover:text-slate-900 text-lg font-bold whitespace-nowrap"
+              className="flex items-center gap-2 text-slate-600 hover:text-slate-900 text-md font-bold whitespace-nowrap"
             >
-              <FiPhoneCall className="text-2xl" />
+              <FiPhoneCall className="text-xl" />
               91 99961-26426
             </a>
             <a
               href="tel:+919871044320"
-              className="flex items-center gap-2 text-slate-600 hover:text-slate-900 text-lg font-bold whitespace-nowrap"
+              className="flex items-center gap-2 text-slate-600 hover:text-slate-900 text-md font-bold whitespace-nowrap"
             >
-              <FiPhoneCall className="text-2xl" />
+              <FiPhoneCall className="text-xl" />
               91 98710-44320
             </a>
 

@@ -6,51 +6,39 @@ import Image from "next/image";
 const locations = [
   {
     id: 1,
-    name: "Punjab",
+    name: "Delhi NCR",
     image:
       "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
   },
   {
     id: 2,
-    name: "Chandigarh",
+    name: "Haryana",
     image:
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
   },
   {
     id: 3,
-    name: "Bikaner",
+    name: "Punjab",
     image:
       "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
   },
   {
     id: 4,
-    name: "Haryana",
+    name: "Chandigarh",
     image:
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop",
   },
   {
     id: 5,
-    name: "Gurugram",
+    name: "Rajasthan",
     image:
       "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1600&auto=format&fit=crop",
   },
   {
     id: 6,
-    name: "Noida",
+    name: "Bikaner",
     image:
       "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1600&auto=format&fit=crop",
-  },
-  {
-    id: 7,
-    name: "Mohali",
-    image:
-      "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?q=80&w=1600&auto=format&fit=crop",
-  },
-  {
-    id: 8,
-    name: "Delhi NCR",
-    image:
-      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1600&auto=format&fit=crop",
   },
 ];
 
@@ -75,7 +63,7 @@ export function OurProjects() {
             timeless appeal.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10 pt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10 pt-8">
             {locations.map((location, index) => (
               <motion.div
                 key={location.id}

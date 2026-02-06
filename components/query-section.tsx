@@ -2,15 +2,31 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
 
+
+type QueryFormElements = HTMLFormElement & {
+  company?: HTMLInputElement;
+};
+
+interface EmailJSError {
+  status?: number;
+  text?: string;
+}
 export function QuerySection() {
+  const formRef = useRef<QueryFormElements | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
+  const EMAILJS_SERVICE_ID = "service_wmd51o6";
+  const EMAILJS_TEMPLATE_ID = "template_sq5paak";
+  const EMAILJS_PUBLIC_KEY = "U-kDJEHwpyt4Atvml";
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -18,11 +34,40 @@ export function QuerySection() {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Query submitted:", formData);
-    alert("Thank you! We will connect with you shortly.");
+    if (formRef.current?.company?.value) return;
+    setLoading(true);
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+        },
+        EMAILJS_PUBLIC_KEY,
+      );
+
+     toast.success("Thank you! We will connect with you shortly 🎉");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+    } catch (error) {
+      const err = error as EmailJSError;
+
+      console.error("EmailJS Error:", err);
+
+      toast.error("Failed to send message. Please try again ❌");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -70,7 +115,6 @@ export function QuerySection() {
                       Call Us Directly
                     </p>
                     <p className="text-xl font-bold text-slate-900">
-                      {" "}
                       <a
                         href="tel:+91 9996126426"
                         className="text-slate-600 hover:text-slate-900 text-lg font-bold text-center py-2"
@@ -89,7 +133,7 @@ export function QuerySection() {
             {/* The image is positioned to "stand" on the bottom of the grid, potentially overlapping visually if we wanted, but here it sits nicely in the center */}
             <div className="relative w-full h-full flex items-end justify-center">
               <div className="absolute bottom-0 w-full h-[110%] md:h-[120%] z-10">
-                {/* Using overflow-visible on parent or specific positioning to allow head to pop up if needed, but container clips by default. 
+                {/* Using overflow-visible on parent or specific positioning to allow head to pop up if needed, but container clips by default.
                         For "half image", we'll fit it nicely. */}
                 <Image
                   src="/agent.png"
@@ -116,17 +160,17 @@ export function QuerySection() {
               <h3 className="text-2xl font-serif font-bold text-slate-900 mb-6">
                 Quick Inquiry
               </h3>
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label
-                    htmlFor="q_name"
+                    htmlFor="name"
                     className="block text-sm font-medium text-slate-700 mb-1"
                   >
                     Name
                   </label>
                   <input
                     type="text"
-                    id="q_name"
+                    id="name"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
@@ -137,14 +181,14 @@ export function QuerySection() {
                 </div>
                 <div>
                   <label
-                    htmlFor="q_email"
+                    htmlFor="email"
                     className="block text-sm font-medium text-slate-700 mb-1"
                   >
                     Email
                   </label>
                   <input
                     type="email"
-                    id="q_email"
+                    id="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
@@ -155,14 +199,14 @@ export function QuerySection() {
                 </div>
                 <div>
                   <label
-                    htmlFor="q_phone"
+                    htmlFor="phone"
                     className="block text-sm font-medium text-slate-700 mb-1"
                   >
                     Phone
                   </label>
                   <input
                     type="tel"
-                    id="q_phone"
+                    id="phone"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
@@ -171,11 +215,26 @@ export function QuerySection() {
                     required
                   />
                 </div>
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-1">
+                    Message
+                  </label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={3}
+                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary outline-none"
+                    placeholder="Looking for Residential..."
+                    required
+                  />
+                </div>
                 <button
                   type="submit"
+                  disabled={loading}
                   className="w-full py-4 mt-2 bg-gradient-to-r from-primary to-yellow-500 hover:from-yellow-400 hover:to-primary text-slate-900 font-bold rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
                 >
-                  Get a Call Back
+                  {loading ? "Sending..." : "Get a Call Back"}
                 </button>
               </form>
             </motion.div>
